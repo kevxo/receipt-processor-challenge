@@ -8,7 +8,7 @@
     - Run local
         Make sure you have python3.11
             - Be sure to be in virtual environment `python -m venv .venv` or `python3.11 -m venv .venv`
-            - `pip install -r requirements`
+            - `pip install -r requirements.txt`
             - `fastapi dev main.py`
         Run Tests
             - python -m pytest tests
