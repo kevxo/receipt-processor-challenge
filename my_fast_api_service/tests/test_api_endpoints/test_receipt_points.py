@@ -4,14 +4,14 @@ from tests.test_config import client
 def test_receipt_points():
     payload = {
         "retailer": "Target",
-        "purchase_date": "2022-01-01",
-        "purchase_time": "13:01",
+        "purchaseDate": "2022-01-01",
+        "purchaseTime": "13:01",
         "items": [
-            {"short_description": "Mountain Dew 12PK", "price": "6.49"},
-            {"short_description": "Emils Cheese Pizza", "price": "12.25"},
-            {"short_description": "Knorr Creamy Chicken", "price": "1.26"},
-            {"short_description": "Doritos Nacho Cheese", "price": "3.35"},
-            {"short_description": "   Klarbrunn 12-PK 12 FL OZ  ", "price": "12.00"},
+            {"shortDescription": "Mountain Dew 12PK", "price": "6.49"},
+            {"shortDescription": "Emils Cheese Pizza", "price": "12.25"},
+            {"shortDescription": "Knorr Creamy Chicken", "price": "1.26"},
+            {"shortDescription": "Doritos Nacho Cheese", "price": "3.35"},
+            {"shortDescription": "   Klarbrunn 12-PK 12 FL OZ  ", "price": "12.00"},
         ],
         "total": "35.35",
     }
