@@ -7,8 +7,8 @@ def new_receipt_process(
 ) -> ReceiptProcess:
     receipt_process.id = str(uuid.uuid4())
     receipt_process.retailer = receipt_process_req.retailer
-    receipt_process.purchase_date = receipt_process_req.purchase_date
-    receipt_process.purchase_time = receipt_process_req.purchase_time
+    receipt_process.purchaseDate = receipt_process_req.purchaseDate
+    receipt_process.purchaseTime = receipt_process_req.purchaseTime
     receipt_process.items = receipt_process_req.items
     receipt_process.total = receipt_process_req.total
 

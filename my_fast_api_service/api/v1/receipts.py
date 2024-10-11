@@ -19,6 +19,6 @@ router = APIRouter()
 def create_receipt_process(receipt_process: ReceiptProcessCreate):
     receipt_process = new_receipt_process(receipt_process, ReceiptProcess)
 
-    receipts_storage.append({receipt_process.id: receipt_process})
+    receipts_storage[receipt_process.id] = receipt_process
 
     return receipt_process
