@@ -1,1 +1,3 @@
-receipts_storage = []
+receipts_storage = {}
+
+points_storage = {}

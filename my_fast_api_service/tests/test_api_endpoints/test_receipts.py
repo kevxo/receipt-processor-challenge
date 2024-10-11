@@ -4,9 +4,9 @@ from tests.test_config import client
 def test_create_receipt_process():
     payload = {
         "retailer": "M&M Corner Market",
-        "purchase_date": "2024-10-08",
-        "purchase_time": "13:01",
-        "items": [{"short_description": "Grocery Store Visit", "price": "12.99"}],
+        "purchaseDate": "2024-10-08",
+        "purchaseTime": "13:01",
+        "items": [{"shortDescription": "Grocery Store Visit", "price": "12.99"}],
         "total": "6.49",
     }
 
@@ -18,9 +18,9 @@ def test_create_receipt_process():
 
 def test_create_receipt_error():
     payload = {
-        "purchase_date": "2024-10-08",
-        "purchase_time": "13:01",
-        "items": [{"short_description": "Grocery Store Visit", "price": "12.99"}],
+        "purchaseDate": "2024-10-08",
+        "purchaseTime": "13:01",
+        "items": [{"shortDescription": "Grocery Store Visit", "price": "12.99"}],
         "total": "6.49",
     }
 

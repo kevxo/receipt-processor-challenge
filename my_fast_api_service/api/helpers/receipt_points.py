@@ -8,9 +8,9 @@ import math
 def retrieve_receipt(
     id: str, receipts: List[ReceiptProcess]
 ) -> Union[ReceiptProcess, None]:
-    for receipt in receipts:
-        if receipt[id]:
-            return receipt[id]
+
+    if receipts.get(id):
+        return receipts[id]
 
     return None
 
@@ -53,7 +53,7 @@ def get_length_of_item_description_points(items: List[ItemCreate]) -> int:
     count = 0
 
     for item in items:
-        description_length = item.short_description.strip()
+        description_length = item.shortDescription.strip()
 
         if len(description_length) % 3 == 0:
             result = math.ceil(float(item.price) * 0.2)
@@ -63,18 +63,18 @@ def get_length_of_item_description_points(items: List[ItemCreate]) -> int:
     return count
 
 
-def get_purchase_date_points(date: date) -> int:
+def get_purchaseDate_points(date: date) -> int:
     if date.day % 2 != 0:
         return 6
 
     return 0
 
 
-def get_purchase_time_points(purchase_time: time) -> int:
+def get_purchaseTime_points(purchaseTime: time) -> int:
     start_time = time(14, 0)
     end_time = time(16, 0)
 
-    if start_time < purchase_time < end_time:
+    if start_time < purchaseTime < end_time:
         return 10
 
     return 0
@@ -90,8 +90,8 @@ def get_my_points(receipt: ReceiptProcess) -> int:
     length_of_item_description_points = get_length_of_item_description_points(
         receipt.items
     )
-    purchase_date_points = get_purchase_date_points(receipt.purchase_date)
-    purchase_time_points = get_purchase_time_points(receipt.purchase_time)
+    purchaseDate_points = get_purchaseDate_points(receipt.purchaseDate)
+    purchaseTime_points = get_purchaseTime_points(receipt.purchaseTime)
 
     sum_of_points = (
         alpha_char_points
@@ -99,8 +99,8 @@ def get_my_points(receipt: ReceiptProcess) -> int:
         + total_is_a_multiple_of_one_fourth_points
         + total_every_two_item_points
         + length_of_item_description_points
-        + purchase_date_points
-        + purchase_time_points
+        + purchaseDate_points
+        + purchaseTime_points
     )
 
     return sum_of_points

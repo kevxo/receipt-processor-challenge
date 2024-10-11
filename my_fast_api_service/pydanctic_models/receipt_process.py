@@ -8,16 +8,16 @@ from pydanctic_models.item import ItemCreate
 class ReceiptProcess(BaseModel):
     id: UUID4
     retailer: str = Field(pattern=r"^[A-Za-z0-9\s&.'-]+$")
-    purchase_date: date
-    purchase_time: time
+    purchaseDate: date
+    purchaseTime: time
     items: List[ItemCreate] = Field(..., min_items=1)
     total: str = Field(pattern=r"[+-]?([0-9]*[.])?[0-9]+")
 
 
 class ReceiptProcessCreate(BaseModel):
     retailer: str = Field(pattern=r"^[A-Za-z0-9\s&.'-]+$", example="M&M Corner Market")
-    purchase_date: date
-    purchase_time: time = Field(example="13:01")
+    purchaseDate: date
+    purchaseTime: time = Field(example="13:01")
     items: List[ItemCreate] = Field(..., min_items=1)
     total: str = Field(pattern=r"[+-]?([0-9]*[.])?[0-9]+", example="6.49")
 
